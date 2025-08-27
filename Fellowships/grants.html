@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Writing Grants</title>
+    </head>
+    <body>
+        <div id="logo_header_container">
+            <a href="index.html">WRITING GRANTS </a>
+            <hr>
+            <h1>Advice from a Grad Student.</h1>
+        </div>
+        <div id="main_container" class="clearfix" style="display: block">
+            <div id="nav_col_left_subsection" style="display: block">
+                <a href="general-advice.html">General Advice</a>
+                <a href="summary-abstract.html">Summary/Abstract</a>
+                <a href="bibliography.html">Bibliography</a>
+                <a href="institutional-letters.html">Institutional Letters</a>
+                <a href="research-proposal.html">Research Proposal</a>
+                <a href="training-plan.html">Training Plan</a>
+                <a href="animal-work.html">Animal Work</a>
+                <a href="rcr.html">RCR</a>
+                <a href="specific-aims.html">Specific Aims</a>
+                <a href="rec-letters.html">Rec letters</a>
+                <a href="biosketch.html">BioSketch</a>
+                <a href="reviewers.html">Reviewers</a>
+                <a href="grants.html">Grants</a>
+            </div>
+        </div>
+        <div style="width: 100%; max-width: 780px; margin: 0 auto; font-size: 14px;" id="contact_link">
+            <p><!--id="main_container" --></p>
+            <hr>
+            <h1>Grants</h1>
+            <p>Here is a list of grants you might be able to apply to in grad school (sometimes before grad school even [NSF]). I personally only have experience applying to the NSF (1x), F31 (1x), Ford Foundation (2x), American Heart Association (1x), and to some degree the HHMI Gilliam (1x ~internal app) fellowships</p>
+            <a href="https://www.nsfgrfp.org/">National Science Foundation Graduate Research Fellowship Program NSF-GRFP</a>
+            <br>
+            <a href="https://researchtraining.nih.gov/programs/fellowships/F31">National Institutes of Health F31</a>
+            <br>
+            <a href="https://researchtraining.nih.gov/programs/fellowships/F99-K00">F99/K00 Predoctoral to Postdoctoral Fellow Transition Award</a>
+            <br>
+            <a href="https://sites.nationalacademies.org/PGA/FordFellowships/PGA_171962">Ford Foundation Predoctoral Fellowship</a>
+            <br>
+            <a href=https://professional.heart.org/en/research-programs/application-information/predoctoral-fellowship">American Heart Association Predoctoral Fellowship</a>
+            <br>
+            <a href="https://www.hhmi.org/science-education/programs/gilliam-fellowships-advanced-study">Howard Hughes Medical Institute Gilliam Fellowships for Advanced Study</a>
+            <br>
+            <a href="https://ndseg.sysplus.com/">National Defense Science and Engineering Graduate Fellowship Program</a>
+            <br>
+            <a href="https://www.krellinst.org/csgf/">Department of Energy Computational Science Graduate Fellowship</a>
+        </div>
+       
+
+        <p><button onclick="SendIt()" class="button-sendit">Send It?</button></p>
+        <p>
+            <img src="img/envelope.jpeg" class="envelope" style="position: absolute" width="45px" height="45px">
+        </p>
+        
+        <script>
+            function SendIt(){
+                var cat = document.querySelector("img.envelope");
+                var button = document.querySelector("button.button-sendit");
+                var angle = 0, lastTime = null;
+                function animate(time){
+                    if(lastTime != null)
+                        if(angle < 600)
+                            angle += (time - lastTime) * 0.5;
+                        else{
+                            cat.parentNode.removeChild(cat);
+                            button.parentNode.removeChild(button);
+                            return
+                        }
+                        lastTime= time;
+                    cat.style.left = angle + "px";
+                    requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            }
+        </script>
+    </div>
+    </body>
+</html>

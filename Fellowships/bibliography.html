@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Writing Grants</title>
+    </head>
+    <body>
+        <div id="logo_header_container">
+            <a href="index.html">WRITING GRANTS </a>
+            <hr>
+            <h1>Advice from a Grad Student.</h1>
+        </div>
+        <div id="main_container" class="clearfix" style="display: block">
+            <div id="nav_col_left_subsection" style="display: block">
+                <a href="general-advice.html">General Advice</a>
+                <a href="summary-abstract.html">Summary/Abstract</a>
+                <a href="bibliography.html">Bibliography</a>
+                <a href="institutional-letters.html">Institutional Letters</a>
+                <a href="research-proposal.html">Research Proposal</a>
+                <a href="training-plan.html">Training Plan</a>
+                <a href="animal-work.html">Animal Work</a>
+                <a href="rcr.html">RCR</a>
+                <a href="specific-aims.html">Specific Aims</a>
+                <a href="rec-letters.html">Rec letters</a>
+                <a href="biosketch.html">BioSketch</a>
+                <a href="reviewers.html">Reviewers</a>
+                <a href="grants.html">Grants</a>
+            </div>
+        </div>
+        <div style="width: 100%; max-width: 780px; margin: 0 auto; font-size: 14px;" id="contact_link">
+            <h1>Bibliography</h1>
+            <p>One of the great benefits of living in the 21st century are the citation managers. You can now use software to keep track of your citations 
+                and automatically build your bibliography in word. These are the most popular ones:</p>
+            <ul>
+                <li><a href="https://www.zotero.org/">Zotero [my favorite]</a></li>
+                <li><a href="https://www.mendeley.com/download-desktop-new/">Mendeley [gives good recommended articles based on your archives]</a></li>
+                <li><a href="https://endnote.com/">Endnote</a></li>
+            </ul>
+            <p>Dealing with citations can get annoying, but the above software is extremely helpful. Make sure that you know what format is required:</p>
+            <ol>
+                <li>What is the citation style? [MLA/APA/etc?]</li>
+                <li>How are the citations to be ordered? [alphabetical vs first appearance]</li>
+                <li>What are the allowed in-line citation styles? [numbered superscript vs first author last name + year]</li>
+            </ol>
+            <p>Make sure that your citations are properly formatted from the beginning. You don't want to look at the last minute and see a minor mistake in 
+                the citation formatting. If you have over 100 citations, manually fixing this can be time consuming. Something that is not often included in 
+                citation manager styles are the PMID numbers. In one application, I was required to include the PMID number if one was available for every citation,
+                but the citation manager I was using did not have this functionality built in. So at the last minute, I had to manually enter these numbers.. This 
+                demonstrates the obvious: machines aren't perfect. So it's very important to check this part of your application as the details do in fact matter.
+            </p>
+        </div>
+       
+
+        <p><button onclick="SendIt()" class="button-sendit">Send It?</button></p>
+        <p>
+            <img src="img/envelope.jpeg" class="envelope" style="position: absolute" width="45px" height="45px">
+        </p>
+        
+        <script>
+            function SendIt(){
+                var cat = document.querySelector("img.envelope");
+                var button = document.querySelector("button.button-sendit");
+                var angle = 0, lastTime = null;
+                function animate(time){
+                    if(lastTime != null)
+                        if(angle < 600)
+                            angle += (time - lastTime) * 0.5;
+                        else{
+                            cat.parentNode.removeChild(cat);
+                            button.parentNode.removeChild(button);
+                            return
+                        }
+                        lastTime= time;
+                    cat.style.left = angle + "px";
+                    requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            }
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Writing Grants</title>
+    </head>
+    <body>
+        <div id="logo_header_container">
+            <a href="index.html">WRITING GRANTS </a>
+            <hr>
+            <h1>Advice from a Grad Student.</h1>
+        </div>
+        <div id="main_container" class="clearfix" style="display: block">
+            <div id="nav_col_left_subsection" style="display: block">
+                <a href="general-advice.html">General Advice</a>
+                <a href="summary-abstract.html">Summary/Abstract</a>
+                <a href="bibliography.html">Bibliography</a>
+                <a href="institutional-letters.html">Institutional Letters</a>
+                <a href="research-proposal.html">Research Proposal</a>
+                <a href="training-plan.html">Training Plan</a>
+                <a href="animal-work.html">Animal Work</a>
+                <a href="rcr.html">RCR</a>
+                <a href="specific-aims.html">Specific Aims</a>
+                <a href="rec-letters.html">Rec letters</a>
+                <a href="biosketch.html">BioSketch</a>
+                <a href="reviewers.html">Reviewers</a>
+                <a href="grants.html">Grants</a>
+            </div>
+        </div>
+        <div style="width: 100%; max-width: 780px; margin: 0 auto; font-size: 14px;" id="contact_link">
+            <h1>Research Proposal</h1>
+            <p>You really should be writing this section with heavy advice from your PI. But I will try to include some of my own tips for the different sections.</p>
+            <ul>
+                <li>Significance: </li>
+            </ul>
+            <p>More tips:</p>
+            <ul>
+                <li><a href="https://ras.mit.edu/education-and-career-resources/educational-offerings/quick-guide-pis/writing-successful-proposals">MIT tips</a></li>
+                <li><a href="https://oge.mit.edu/finances/fellowships/fellowship-tips/drafting-a-research-proposal/">MIT tips #2</a></li>
+                <li><a href="https://research.berkeley.edu/writing-research-proposals">UC Berkeley tips</a></li>
+                <li><a href="https://science.yalecollege.yale.edu/fellowships/how-write-proposal">Yale tips</a></li>
+                <li><a href="https://www.sciencemag.org/careers/2002/07/writing-research-plan">Science mag tips</a></li>
+                <li><a href="https://www.uky.edu/~eushe2/Pajares/proposal.html">Emory guide</a></li>
+                <li><a href="https://iacweb.ethz.ch/staff/harald/writing/proposal.html">ETHZ tips</a></li>
+            </ul>
+        </div>
+       
+
+        <p><button onclick="SendIt()" class="button-sendit">Send It?</button></p>
+        <p>
+            <img src="img/envelope.jpeg" class="envelope" style="position: absolute" width="45px" height="45px">
+        </p>
+        
+        <script>
+            function SendIt(){
+                var cat = document.querySelector("img.envelope");
+                var button = document.querySelector("button.button-sendit");
+                var angle = 0, lastTime = null;
+                function animate(time){
+                    if(lastTime != null)
+                        if(angle < 600)
+                            angle += (time - lastTime) * 0.5;
+                        else{
+                            cat.parentNode.removeChild(cat);
+                            button.parentNode.removeChild(button);
+                            return
+                        }
+                        lastTime= time;
+                    cat.style.left = angle + "px";
+                    requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            }
+        </script>
+    </div>
+    </body>
+</html>

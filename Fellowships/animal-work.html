@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Writing Grants</title>
+    </head>
+    <body>
+        <div id="logo_header_container">
+            <a href="index.html">WRITING GRANTS </a>
+            <hr>
+            <h1>Advice from a Grad Student.</h1>
+        </div>
+        <div id="main_container" class="clearfix" style="display: block">
+            <div id="nav_col_left_subsection" style="display: block">
+                <a href="general-advice.html">General Advice</a>
+                <a href="summary-abstract.html">Summary/Abstract</a>
+                <a href="bibliography.html">Bibliography</a>
+                <a href="institutional-letters.html">Institutional Letters</a>
+                <a href="research-proposal.html">Research Proposal</a>
+                <a href="training-plan.html">Training Plan</a>
+                <a href="animal-work.html">Animal Work</a>
+                <a href="rcr.html">RCR</a>
+                <a href="specific-aims.html">Specific Aims</a>
+                <a href="rec-letters.html">Rec letters</a>
+                <a href="biosketch.html">BioSketch</a>
+                <a href="reviewers.html">Reviewers</a>
+                <a href="grants.html">Grants</a>
+            </div>
+        </div>
+        <div style="width: 100%; max-width: 780px; margin: 0 auto; font-size: 14px;" id="contact_link">
+            <h1>Animal Work</h1>
+            <p>I think this section is required to ensure that you are somewhat familiar with your IACUC protocols (also that you have an IACUC protocol) and meet all the basic standards. 
+                Typicallly, it is required that you provide descriptions of your 
+                research protocols and animal models, a justification for the amount of animals (power analysis) and the sex usage (why using only males vs females), and how you 
+                will minimize pain/distress. Most of this information should be found in your IACUC protocol but you will want to make sure all the required 
+                information is present and clear. Sometimes the requirements for the fellowship/grant application are more strict than your IACUC protocol (especially if your protocol is a little old)
+                so you always need to double check that your statement includes all required subject matter. 
+            </p>
+            <p>Some helpful links:</p>
+            <ul>
+                <li><a href=="https://olaw.nih.gov/guidance/vertebrate-animal-section.htm">NIH guidance</a></li>
+                <li><a href="https://www.stat.ubc.ca/~rollin/stats/ssize/n2.html">Power analysis calculator</a></li>
+                <li><a href="https://grants.nih.gov/grants/olaw/vaschecklist.pdf">Another NIH link</a></li>
+            </ul>
+        </div>
+       
+
+        <p><button onclick="SendIt()" class="button-sendit">Send It?</button></p>
+        <p>
+            <img src="img/envelope.jpeg" class="envelope" style="position: absolute" width="45px" height="45px">
+        </p>
+        
+        <script>
+            function SendIt(){
+                var cat = document.querySelector("img.envelope");
+                var button = document.querySelector("button.button-sendit");
+                var angle = 0, lastTime = null;
+                function animate(time){
+                    if(lastTime != null)
+                        if(angle < 600)
+                            angle += (time - lastTime) * 0.5;
+                        else{
+                            cat.parentNode.removeChild(cat);
+                            button.parentNode.removeChild(button);
+                            return
+                        }
+                        lastTime= time;
+                    cat.style.left = angle + "px";
+                    requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            }
+        </script>
+    </div>
+    </body>
+</html>
